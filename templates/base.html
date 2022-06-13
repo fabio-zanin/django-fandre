@@ -7,11 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <title>Django - Francisco Andre - Udemy</title>
+    <title>{% block title %}Django - Francisco Andre - Udemy{% endblock title %}</title>
 </head>
 <body>
-    <h1>Hello World!!!</h1>
+    <h1>Django - Francisco Andre - Udemy</h1>
+    {% block body %}
 
+    {% endblock body %}
+    
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>

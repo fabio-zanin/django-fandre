@@ -47,6 +47,8 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
     'core.apps.CoreConfig',
+    'tasks.apps.TasksConfig',
+    'accounts.apps.AccountsConfig'
 ]
 
 THIRD_APPS = []
