@@ -14,6 +14,7 @@ import os
 import sys
 
 from decouple import config
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,7 +52,9 @@ PROJECT_APPS = [
     'accounts.apps.AccountsConfig'
 ]
 
-THIRD_APPS = []
+THIRD_APPS = [
+    'widget_tweaks',
+]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_APPS
 
@@ -132,6 +135,13 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert-success',
+    
+    messages.ERROR: 'alert-danger',
+}
 
 
 # Static files (CSS, JavaScript, Images)
