@@ -6,7 +6,9 @@ app_name = 'tasks'
 
 urlpatterns = [
     path('categorias', views.list_categories, name='list_categories'),
-    path('categoria/adicionar/', views.add_category, name='add_category'),
-    path('categoria/editar/<int:id_category>/', views.edit_category, name='edit_category'),
-    path('categoria/excluir/<int:id_category>/', views.delete_category, name='delete_category'),    
+    path('categorias/adicionar/', views.add_category, name='add_category'),
+    path('categorias/editar/<int:id_category>/', views.edit_category, name='edit_category'),
+    path('categorias/excluir/<int:id_category>/', views.delete_category, name='delete_category'),
+    path('adicionar/', views.add_task, name='add_task'),
+    path('', views.list_task, name='list_task'),
 ]
