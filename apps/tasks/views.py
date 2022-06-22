@@ -41,3 +41,12 @@ def edit_category(request, id_category):
     context['form'] = form
     return render(request, template_name, context)
 
+
+def delete_category(request, id_category):
+    category = Category.objects.get(id=id_category)
+    if category.owner == request.user:
+        category.delete()
+    else:
+        messages.error(request, 'Você não tem permissão para excluir essa categoria')
+        return redirect('core:home')
+    return redirect('tasks:list_categories')

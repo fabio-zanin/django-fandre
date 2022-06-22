@@ -23,8 +23,8 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown07">
-                  <a class="dropdown-item" href="{% url 'category:add_category' %}">Adicionar categoria</a>
-                  <a class="dropdown-item" href="{% url 'category:list_categories' %}">Listar categorias</a>
+                  <a class="dropdown-item" href="{% url 'tasks:add_category' %}">Adicionar categoria</a>
+                  <a class="dropdown-item" href="{% url 'tasks:list_categories' %}">Listar categorias</a>
                   <a class="dropdown-item" href="#">Adicionar tarefa</a>
                   <a class="dropdown-item" href="#">Listar tarefas</a>
                 </div>
@@ -47,6 +47,15 @@
     <script src="{% static 'js/jquery-3.6.0.slim.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+    <script>
+      $(document).on('click', '.confirm-delete', function() {
+        $('#confirmDeleteModal').attr('caller-id', $(this).attr('id'));
+      });
+      $(document).on('click', '#confirmDeleteButtonModal', function() {
+        var caller = $('#confirmDeleteButtonModal').closest('.modal').attr('caller-id');
+        window.location = $('#'.concat(caller)).attr('href');
+      });
+    </script>  
     
 </body>
 </html>
