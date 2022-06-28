@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">    
+    <title>Tasks - Login</title>
+</head>
+<body class="text-center">    
+    <form class="form-signin" method="POST" action=".">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 font-weight-normal">Identifique-se</h1>
+        <label for="username" class="sr-only">Usuário</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Nome de usuário." required autofocus>
+        <br>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha." required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      </form>
+
+      <script src="{% static 'js/jquery-3.6.0.slim.js' %}"></script>
+      <script src="{% static 'js/bootstrap.js' %}"></script>    
+  
+</body>
+</html>
