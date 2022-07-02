@@ -1,1 +1,1 @@
-web: gunicorn django_fandre.wsgi
+web: gunicorn django_fandre.wsgi  --log-file -
